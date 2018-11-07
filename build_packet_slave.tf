@@ -20,7 +20,7 @@ resource "packet_device" "jenkinsslave" {
   operating_system = "debian_9"
   billing_cycle = "hourly"
   project_id = "${var.project_id}"
-  user_date = "${file("installBuildDependancies")}"
+  user_date = "${file("installBuildDependancies.sh")}"
 }
 
 output "maintenanceaddr" {
