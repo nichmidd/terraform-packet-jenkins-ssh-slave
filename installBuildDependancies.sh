@@ -1,7 +1,7 @@
 #!/bin/bash
 apt-get update -y
 apt-get install -y openjdk-8-jre
-apt-get install -y linux-headers-amd64 linux-headers-`uname -r` build-essential git zip
+apt-get install -y linux-headers-amd64 linux-headers-`uname -r` build-essential git zip jq
 
 wget -q -O - http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc | apt-key add -
 echo "deb http://download.virtualbox.org/virtualbox/debian stretch contrib" >> /etc/apt/sources.list
