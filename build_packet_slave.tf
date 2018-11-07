@@ -4,18 +4,23 @@ variable "project_id" {
 variable "auth_token" {
   type = "string"
 }
+variable "hostname" {
+  type = "string"
+}
+
 
 provider "packet" {
   auth_token = "${var.auth_token}"
 }
 
 resource "packet_device" "jenkinsslave" {
-  hostname = "slave01.solutionalchemy.io"
+  hostname = "${var.hostname}"
   plan = "baremetal_1e"
   facility = "syd1"
   operating_system = "debian_9"
   billing_cycle = "hourly"
   project_id = "${var.project_id}"
+  user_date = "${file("installBuildDependancies")}"
 }
 
 output "maintenanceaddr" {
