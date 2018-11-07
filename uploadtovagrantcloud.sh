@@ -14,7 +14,7 @@ response=$(curl \
   --header "Authorization: Bearer $VAGRANT_CLOUD_TOKEN" \
   https://app.vagrantup.com/api/v1/box/nichmidd/ubuntu-18.04/version/$build_version/provider/virtualbox/upload)
 upload_path=$(echo "$response" | jq .upload_path | sed 's/"//g')
-curl $upload_path --request PUT --upload-file virtualbox-1.2.3.box
+curl $upload_path --request PUT --upload-file box/virtualbox/ubuntu-18.04-$build_version.box
 curl \
   --header "Authorization: Bearer $VAGRANT_CLOUD_TOKEN" \
   https://app.vagrantup.com/api/v1/box/nichmidd/ubuntu-18.04/version/$build_version/release \
