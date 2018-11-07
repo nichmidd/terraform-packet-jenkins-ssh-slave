@@ -1,3 +1,3 @@
 #!/bin/bash
 build_version=`cat build_version`
-packer build ubuntu.json
+/usr/local/bin/packer build ubuntu.json
