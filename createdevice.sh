@@ -3,4 +3,6 @@ project_id=$(curl -X GET --header 'Accept: application/json' --header "X-Auth-To
 terraform init
 terraform plan -var "project_id=${project_id}" -var "auth_token=${PACKET_AUTH_TOKEN}" -var "hostname=${BUILD_TAG}" -out plan.tfstate
 terraform apply plan.tfstate
-export ip_address=$(terraform output maintenanceaddr)
+ip_address=$(terraform output maintenanceaddr)
+echo $project_id > project_id.txt
+echo $ip_address > ip_address.txt
