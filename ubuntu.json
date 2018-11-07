@@ -110,7 +110,7 @@
         "ssh_username": "vagrant",
         "update": "true",
         "vagrantfile_template": "",
-        "version": "0.1",
+        "version": "{{env build_version}}",
         "virtualbox_guest_os_type": "Ubuntu_64",
         "vm_name": "ubuntu-18.04"
     }
