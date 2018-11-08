@@ -82,7 +82,6 @@
             "script/vagrant.sh",
             "script/virtualbox.sh",
             "script/motd.sh",
-            "script/minimize.sh",
             "script/cleanup.sh"
         ],
         "type": "shell"
